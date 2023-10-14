@@ -48,3 +48,6 @@ if __name__ == '__main__':
     lin_model1.plot_predicted_vs_actual(f_train, t_train)
     lin_model1.plot_predicted_vs_actual(f_test, t_test)
     # from sklearn import linear_model.S
+
+
+

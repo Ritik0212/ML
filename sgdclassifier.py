@@ -17,3 +17,6 @@ class SGDClassifier:
     def init_weights(self):
         self.w = np.random.randn(n, 1)
 
+
+    # Hi just tesing a push from dell
+
