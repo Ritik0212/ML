@@ -18,5 +18,5 @@ class SGDClassifier:
         self.w = np.random.randn(n, 1)
 
 
-    # Hi just tesing a push from dell
-
+    # Hi just testing a push from dell
+    # Hi just testing a push from acer
