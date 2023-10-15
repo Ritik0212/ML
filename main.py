@@ -76,6 +76,18 @@ if __name__ == '__main__':
     f_train = scaler.fit_transform(f_train)
     f_test = scaler.transform(f_test)
 
+    c1 = SGDClassifier(lr=0.01, regu=0, epochs=500, batch_size=1)
+    c1.fit(f_train, t_train)
+
+    # c1.print_predict_vs_actual(f_train, t_train)
+    y_pred_train = c1.predict(f_train)
+    print(c1.score(f_train, t_train))
+
+    y_pred_test = c1.predict(f_test)
+    print(c1.score(f_test, t_test))
+
+    print(confusion_matrix(t_test, y_pred_test))
+    print(precision_recall_fscore_support(t_test, y_pred_test))
 
     # y_true = np.array(["cat", "ant", "cat", "cat", "ant", "bird"])
     # y_pred = np.array(["ant", "ant", "cat", "cat", "ant", "cat"])
@@ -86,12 +98,3 @@ if __name__ == '__main__':
     # print(precision_recall_fscore_support(y_true, y_pred, labels=np.array(['pig', 'dog', 'cat'])))
 
 
-    c1 = SGDClassifier(lr=0.01, regu=0, epochs=500, batch_size=1)
-    c1.fit(f_train, t_train)
-
-    # c1.print_predict_vs_actual(f_train, t_train)
-    y_pred_train = c1.predict(f_train)
-    print(c1.score(f_train, t_train))
-
-    y_pred_test = c1.predict(f_test)
-    print(c1.score(f_test, t_test))

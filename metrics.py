@@ -23,8 +23,12 @@ def confusion_matrix(y_true, y_pred, labels=None):
 
 
 def precision_recall_fscore_support(y_true, y_pred, labels=None):
+    if labels is None:
+        labels = np.append(y_true, y_pred)
+        labels = np.unique(labels)
+
     cm = confusion_matrix(y_true, y_pred, labels=labels)
-    print(cm.shape)
+    # print(cm.shape)
     precision = np.diagonal(cm) / np.sum(cm, axis=0)
 
     recall = np.diagonal(cm) / np.sum(cm, axis=1)
